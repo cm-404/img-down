@@ -59,7 +59,7 @@ function down_img_by_url($url, $name, $dir = '')
  * @param int $_count_max 设置本次最大下载量
  * @return int
  */
-function down_img_count($_count_max = 30)
+function down_img_count($_count_max = 50)
 {
   $_count = 0;
   while ($_count < $_count_max) {
@@ -68,7 +68,7 @@ function down_img_count($_count_max = 30)
     $_name_pic = basename($_url_pic);//获取图片文件名
     down_img_by_url($_url_pic, $_name_pic, 'iw233');//保存图片至本地文件夹
     $_count++;
-    sleep(1);//设置请求延时,防止拉黑ip
+    sleep(0.7);//设置请求延时,防止拉黑ip
   }
 
   return $_count;
