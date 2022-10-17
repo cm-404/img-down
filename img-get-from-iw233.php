@@ -76,6 +76,6 @@ function down_img_count($_count_max = 30)
 
 echo '开始下载时间：' . date('Y-m-d H:i:s');
 $_count_img = down_img_count();
-echo '完成下载时间：' . date('Y-m-d H:i:s');
-echo '合计下载图片' . $_count_img . '张';
+echo '<br>完成下载时间：' . date('Y-m-d H:i:s');
+echo '<br>合计下载图片' . $_count_img . '张';
 
