@@ -59,14 +59,14 @@ function down_img_by_url($url, $name, $dir = '')
  * @param int $_count_max 设置本次最大下载量
  * @return int
  */
-function down_img_count($_count_max = 60)
+function down_img_count($_count_max = 30)
 {
   $_count = 0;
   while ($_count <= $_count_max) {
     $_url_api = 'https://iw233.cn/API/Random.php';
     $_url_pic = get_redirect_url_by_header($_url_api);//获取图片完整连接
     $_name_pic = basename($_url_pic);//获取图片文件名
-    down_img_by_url($_url_pic, $_name_pic);//保存图片至本地文件夹
+    down_img_by_url($_url_pic, $_name_pic, 'iw233');//保存图片至本地文件夹
     $_count++;
     sleep(1);//设置请求延时,防止拉黑ip
   }
@@ -74,8 +74,8 @@ function down_img_count($_count_max = 60)
   return $_count;
 }
 
-echo '开始下载时间：' . date('Y-m-d');
+echo '开始下载时间：' . date('Y-m-d H:i:s');
 $_count_img = down_img_count();
-echo '完成下载时间：' . date('Y-m-d');
+echo '完成下载时间：' . date('Y-m-d H:i:s');
 echo '合计下载图片' . $_count_img . '张';
 
