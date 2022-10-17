@@ -62,7 +62,7 @@ function down_img_by_url($url, $name, $dir = '')
 function down_img_count($_count_max = 30)
 {
   $_count = 0;
-  while ($_count <= $_count_max) {
+  while ($_count < $_count_max) {
     $_url_api = 'https://iw233.cn/API/Random.php';
     $_url_pic = get_redirect_url_by_header($_url_api);//获取图片完整连接
     $_name_pic = basename($_url_pic);//获取图片文件名
