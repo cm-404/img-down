@@ -48,9 +48,11 @@ function down_img_by_api($sort, $num = 100)
 
   # api接口汇总
   //$_api_host = 'https://iw233.cn/api.php';      # 60秒120次GET,超过拉黑IP
-  //$_api_host = 'https://api.iw233.cn/api.php';  # 并发连接：100，超过404
+  $_api_host = 'https://api.iw233.cn/api.php';  # 并发连接：100，超过404
   //$_api_host = 'https://ap1.iw233.cn/api.php';  # 并发连接：100，超过404
-  $_api_host = 'https://dev.iw233.cn/api.php';  # 并发连接：80， 超过404
+  //$_api_host = 'https://dev.iw233.cn/api.php';  # 并发连接：80， 超过404
+
+  echo '<br>api_host:' . $_api_host . '<br>';
 
   $_info_sort = [];
   foreach ($_arr_api_sort as $_sort) {
